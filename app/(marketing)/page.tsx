@@ -16,32 +16,64 @@ import MarketingSection from "@/components/MarketingSection";
 export default async function LandingPage() {
   const data = await client.fetch(landingPageQuery);
 
+  if (!data) return null; // ⛑️ safety net
+
   return (
     <main>
-      <div className=" relative">
-        <Image
-          src={"/wft-bg.jpg"}
-          alt="bg-image"
-          width={100}
-          height={100}
-          className=" absolute h-full w-full object-fill"
-        />
-        <Hero data={data.hero} />
-        {data.heroCarousel && <HeroCarousel data={data.heroCarousel} />}
-      </div>
+      {data.hero && (
+        <div className="relative">
+          <Image
+            src="/wft-bg.jpg"
+            alt="bg-image"
+            fill
+            className="absolute object-fill"
+            priority
+          />
 
-      <SponsorsSection data={data.sponsors} />
-      <Section2 data={data.section2} />
-      {data.featureSections?.map((section: any, index: number) => (
-        <FeatureSection key={index} data={section} />
-      ))}
-      <TestimonialsSection data={data.testimonialsSection} />
-      <ComparisonSection data={data.comparisonSection} />
-      <FAQSection data={data.faqSection} />
+          <Hero data={data.hero} />
 
-      <MarketingSection data={data.marketingSection} />
-      <PromoSection data={data.promoSection} />
-      <ArticleSection data={data.articleSection} />
+          {data.heroCarousel && (
+            <HeroCarousel data={data.heroCarousel} />
+          )}
+        </div>
+      )}
+
+      {data.sponsors && (
+        <SponsorsSection data={data.sponsors} />
+      )}
+
+      {data.section2 && (
+        <Section2 data={data.section2} />
+      )}
+
+      {Array.isArray(data.featureSections) &&
+        data.featureSections.map((section: any, index: number) => (
+          section ? <FeatureSection key={index} data={section} /> : null
+        ))}
+
+      {data.testimonialsSection && (
+        <TestimonialsSection data={data.testimonialsSection} />
+      )}
+
+      {data.comparisonSection && (
+        <ComparisonSection data={data.comparisonSection} />
+      )}
+
+      {data.faqSection && (
+        <FAQSection data={data.faqSection} />
+      )}
+
+      {data.marketingSection && (
+        <MarketingSection data={data.marketingSection} />
+      )}
+
+      {data.promoSection && (
+        <PromoSection data={data.promoSection} />
+      )}
+
+      {data.articleSection && (
+        <ArticleSection data={data.articleSection} />
+      )}
     </main>
   );
 }
