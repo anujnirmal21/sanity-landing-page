@@ -2,6 +2,7 @@ export const promoSectionSchema = {
   name: "promoSection",
   title: "Promo Section",
   type: "object",
+
   fields: [
     {
       name: "title",
@@ -31,9 +32,29 @@ export const promoSectionSchema = {
     {
       name: "backgroundImage",
       title: "Background Image",
-      type: "image",
-      options: { hotspot: true },
-      validation: (Rule: any) => Rule.required(),
+      type: "object",
+      fields: [
+        {
+          name: "image",
+          title: "Image",
+          type: "image",
+          options: { hotspot: true },
+          validation: (Rule: any) => Rule.required(),
+        },
+        {
+          name: "alt",
+          title: "Alt Text",
+          type: "string",
+        },
+      ],
     },
   ],
+
+  preview: {
+    prepare() {
+      return {
+        title: "Promo Section",
+      };
+    },
+  },
 };

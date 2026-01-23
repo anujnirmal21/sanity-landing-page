@@ -51,7 +51,7 @@ export default function HeroContent({ data }: any) {
             variants={textRevealVariants}
             className="font-helvetica font-medium text-4xl sm:text-6xl lg:text-[90px] leading-tight lg:leading-[94px] tracking-tight lg:tracking-[-5.9px] text-white block"
           >
-            {data.titleLine1 || "Lead the Pack with Tiger-Driven Insights"}
+            {data.titleLine1}
           </motion.h1>
         </div>
 

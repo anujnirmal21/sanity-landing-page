@@ -2,6 +2,7 @@ export const heroCarouselSchema = {
   name: "heroCarousel",
   title: "Hero Carousel",
   type: "object",
+
   fields: [
     {
       name: "heading",
@@ -37,10 +38,15 @@ export const heroCarouselSchema = {
             {
               name: "image",
               title: "Image",
-              type: "image",
-              options: { hotspot: true },
-              validation: (Rule: any) => Rule.required(),
+              type: "object",
               fields: [
+                {
+                  name: "image",
+                  title: "Image File",
+                  type: "image",
+                  options: { hotspot: true },
+                  validation: (Rule: any) => Rule.required(),
+                },
                 {
                   name: "alt",
                   title: "Alt Text",
@@ -53,4 +59,12 @@ export const heroCarouselSchema = {
       ],
     },
   ],
+
+  preview: {
+    prepare() {
+      return {
+        title: "Hero Carousel",
+      };
+    },
+  },
 };

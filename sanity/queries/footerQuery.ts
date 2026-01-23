@@ -1,0 +1,43 @@
+export const footerQuery = `
+*[_type == "footer"][0]{
+  logo{
+    asset->{
+      url
+    }
+  },
+  columns[]{
+    title,
+    links[]{
+      label,
+      href
+    }
+  },
+  newsletter{
+    heading,
+    description,
+    placeholder,
+    buttonLabel
+  },
+  copyright,
+  legalLinks[]{
+    label,
+    href
+  },
+  socials[]{
+    name,
+    href,
+    icon{
+      asset->{
+        url
+      }
+    }
+  },
+  credit{
+    text,
+    links[]{
+      label,
+      href
+    }
+  }
+}
+`;

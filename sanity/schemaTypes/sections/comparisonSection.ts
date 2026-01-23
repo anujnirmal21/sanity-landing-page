@@ -1,7 +1,8 @@
 export const comparisonSectionSchema = {
   name: "comparisonSection",
-  title: "Competition Section",
+  title: "Comparison Section",
   type: "object",
+
   fields: [
     {
       name: "heading",
@@ -43,8 +44,20 @@ export const comparisonSectionSchema = {
     {
       name: "backgroundImage",
       title: "Background Image",
-      type: "image",
-      options: { hotspot: true },
+      type: "object",
+      fields: [
+        {
+          name: "image",
+          title: "Image",
+          type: "image",
+          options: { hotspot: true },
+        },
+        {
+          name: "alt",
+          title: "Alt Text",
+          type: "string",
+        },
+      ],
     },
     {
       name: "competitors",
@@ -80,4 +93,12 @@ export const comparisonSectionSchema = {
       ],
     },
   ],
+
+  preview: {
+    prepare() {
+      return {
+        title: "Comparison Section",
+      };
+    },
+  },
 };

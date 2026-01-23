@@ -1,7 +1,8 @@
-export const marketingSchema = {
+export const marketingSectionSchema = {
   name: "marketingSection",
   title: "Marketing Section",
   type: "object",
+
   fields: [
     {
       name: "title",
@@ -31,20 +32,27 @@ export const marketingSchema = {
           name: "text",
           title: "Button Text",
           type: "string",
+          validation: (Rule: any) => Rule.required(),
         },
         {
           name: "url",
           title: "Button URL",
           type: "string",
+          validation: (Rule: any) => Rule.required(),
         },
       ],
     },
     {
       name: "illustration",
       title: "Illustration",
-      type: "image",
-      options: { hotspot: true },
+      type: "object",
       fields: [
+        {
+          name: "image",
+          title: "Image",
+          type: "image",
+          options: { hotspot: true },
+        },
         {
           name: "alt",
           title: "Alt Text",
@@ -53,4 +61,12 @@ export const marketingSchema = {
       ],
     },
   ],
+
+  preview: {
+    prepare() {
+      return {
+        title: "Marketing Section",
+      };
+    },
+  },
 };
