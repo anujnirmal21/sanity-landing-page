@@ -59,7 +59,7 @@ export default function Header({ data }: HeaderProps) {
           `}
         >
           {/* --- LEFT BLOCK (Logo + Nav) --- */}
-          <div className="relative flex items-center justify-between lg:justify-start w-full lg:w-auto lg:max-w-[494px] h-[68px] bg-white rounded-lg shadow-[0px_0px_2px_rgba(23,16,14,0.2)] backdrop-blur-[5px] px-3 z-50">
+          <div className="relative flex items-center justify-between lg:justify-start w-full lg:w-auto lg:max-w-[529px] h-[68px] bg-white rounded-lg shadow-[0px_0px_2px_rgba(23,16,14,0.2)] backdrop-blur-[5px] px-3 z-50">
             {/* Logo */}
             <div className="flex items-center justify-center w-[107px] h-[64px] bg-gray-100 rounded ml-1 overflow-hidden shrink-0">
               <img
@@ -70,7 +70,7 @@ export default function Header({ data }: HeaderProps) {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-8 ml-8">
+            <nav className="hidden lg:flex items-center gap-6 ml-6">
               {data.navigation.map((item) => (
                 <a
                   key={item.label}
@@ -130,7 +130,7 @@ export default function Header({ data }: HeaderProps) {
                 >
                   {btn.label}
                 </a>
-              )
+              ),
             )}
           </div>
         </header>
@@ -139,7 +139,9 @@ export default function Header({ data }: HeaderProps) {
       {/* --- MOBILE OVERLAY --- */}
       <div
         className={`fixed inset-0 z-60 lg:hidden transition-opacity duration-300 ${
-          isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible delay-300"
+          isMobileMenuOpen
+            ? "opacity-100 visible"
+            : "opacity-0 invisible delay-300"
         }`}
       >
         <div
@@ -190,7 +192,7 @@ export default function Header({ data }: HeaderProps) {
                 >
                   {btn.label}
                 </a>
-              )
+              ),
             )}
           </div>
         </div>
