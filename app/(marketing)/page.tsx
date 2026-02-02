@@ -13,10 +13,12 @@ import Image from "next/image";
 import PromoSection from "@/components/PromoSection";
 import MarketingSection from "@/components/MarketingSection";
 
+export const dynamic = "force-dynamic";
+
 export default async function LandingPage() {
   const data = await client.fetch(landingPageQuery);
 
-  if (!data) return null; // ⛑️ safety net
+  if (!data) return null;
 
   return (
     <main>
@@ -32,24 +34,18 @@ export default async function LandingPage() {
 
           <Hero data={data.hero} />
 
-          {data.heroCarousel && (
-            <HeroCarousel data={data.heroCarousel} />
-          )}
+          {data.heroCarousel && <HeroCarousel data={data.heroCarousel} />}
         </div>
       )}
 
-      {data.sponsors && (
-        <SponsorsSection data={data.sponsors} />
-      )}
+      {data.sponsors && <SponsorsSection data={data.sponsors} />}
 
-      {data.section2 && (
-        <Section2 data={data.section2} />
-      )}
+      {data.section2 && <Section2 data={data.section2} />}
 
       {Array.isArray(data.featureSections) &&
-        data.featureSections.map((section: any, index: number) => (
-          section ? <FeatureSection key={index} data={section} /> : null
-        ))}
+        data.featureSections.map((section: any, index: number) =>
+          section ? <FeatureSection key={index} data={section} /> : null,
+        )}
 
       {data.testimonialsSection && (
         <TestimonialsSection data={data.testimonialsSection} />
@@ -59,21 +55,15 @@ export default async function LandingPage() {
         <ComparisonSection data={data.comparisonSection} />
       )}
 
-      {data.faqSection && (
-        <FAQSection data={data.faqSection} />
-      )}
+      {data.faqSection && <FAQSection data={data.faqSection} />}
 
       {data.marketingSection && (
         <MarketingSection data={data.marketingSection} />
       )}
 
-      {data.promoSection && (
-        <PromoSection data={data.promoSection} />
-      )}
+      {data.promoSection && <PromoSection data={data.promoSection} />}
 
-      {data.articleSection && (
-        <ArticleSection data={data.articleSection} />
-      )}
+      {data.articleSection && <ArticleSection data={data.articleSection} />}
     </main>
   );
 }
