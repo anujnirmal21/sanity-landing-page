@@ -50,7 +50,7 @@ export default function Header({ data }: HeaderProps) {
       <div className="w-full flex justify-center relative z-50 pointer-events-none">
         <header
           className={`
-            fixed top-4 lg:top-18 w-[95%] lg:w-full max-w-[1382px]
+            fixed top-4 lg:top-18 w-full max-w-7xl px-4 lg:px-6
             flex justify-between items-center
             transition-all duration-500 ease-in-out
             will-change-transform will-change-opacity
@@ -59,7 +59,7 @@ export default function Header({ data }: HeaderProps) {
           `}
         >
           {/* --- LEFT BLOCK (Logo + Nav) --- */}
-          <div className="relative flex items-center justify-between lg:justify-start w-full lg:w-auto lg:max-w-[529px] h-[68px] bg-white rounded-lg shadow-[0px_0px_2px_rgba(23,16,14,0.2)] backdrop-blur-[5px] px-3 z-50">
+          <div className="relative flex items-center justify-between lg:justify-start w-full lg:w-auto h-[68px] bg-white rounded-lg shadow-[0px_0px_2px_rgba(23,16,14,0.2)] backdrop-blur-[5px] px-3 z-50">
             {/* Logo */}
             <div className="flex items-center justify-center w-[107px] h-[64px] bg-gray-100 rounded ml-1 overflow-hidden shrink-0">
               <img
@@ -110,7 +110,7 @@ export default function Header({ data }: HeaderProps) {
           </div>
 
           {/* --- RIGHT BLOCK (Desktop Actions) --- */}
-          <div className="hidden lg:flex items-center justify-end px-[19px] py-[8px] gap-[41px] w-full max-w-[529px] h-[64px] bg-white rounded-lg shadow-[0px_0px_2px_rgba(23,16,14,0.2)] backdrop-blur-[5px]">
+          <div className="hidden lg:flex items-center justify-end px-[19px] py-[8px] gap-[41px] w-full lg:w-auto h-[64px] bg-white rounded-lg shadow-[0px_0px_2px_rgba(23,16,14,0.2)] backdrop-blur-[5px]">
             {data.actions.map((btn) =>
               btn.variant === "primary" ? (
                 <a

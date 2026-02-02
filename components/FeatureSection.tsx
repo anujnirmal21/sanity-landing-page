@@ -64,7 +64,7 @@ const FeatureSection = ({ data }: FeatureSectionProps) => {
       <h2
         className={clsx(
           "font-light text-[#17100E] text-[40px] md:text-[60px] lg:text-[70.13px] leading-[93%] tracking-[-2.84px]",
-          isStacked ? "max-w-4xl" : "max-w-[650px]",
+          isStacked ? "max-w-4xl" : "max-w-3xl",
         )}
       >
         {title}
@@ -117,7 +117,7 @@ const FeatureSection = ({ data }: FeatureSectionProps) => {
             <p
               className={clsx(
                 "font-normal text-[18.44px] leading-[24px] tracking-[-0.03em] transition-colors duration-300",
-                !isStacked && "max-w-[505px]",
+                !isStacked && "max-w-xl",
                 isActive ? "text-[#17100E]" : "text-[#888888]",
               )}
             >
@@ -174,7 +174,7 @@ const FeatureSection = ({ data }: FeatureSectionProps) => {
         viewport={{ once: true, margin: "-100px" }}
         variants={fadeIn}
         className={clsx(
-          "relative bg-white rounded-[24px] p-6 md:p-8 lg:p-[32px] w-full max-w-[1392px]",
+          "relative bg-white rounded-[24px] p-6 md:p-8 lg:p-[32px] w-full max-w-7xl",
           isStacked
             ? "flex flex-col"
             : "flex flex-col lg:flex-row gap-8 lg:gap-[60px] lg:min-h-[1022px]",

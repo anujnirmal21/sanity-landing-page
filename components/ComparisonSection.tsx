@@ -88,7 +88,7 @@ export default function CompetitionLeaderboard({
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
         variants={containerVariants}
-        className="relative w-full mx-auto max-w-[1200px] rounded-[32px] overflow-hidden bg-white shadow-2xl border border-gray-100 p-8 md:p-12 lg:p-16"
+        className="relative w-full mx-auto max-w-7xl rounded-[32px] overflow-hidden bg-white shadow-2xl border border-gray-100 p-8 md:p-12 lg:p-16"
       >
         <div className="flex flex-col gap-12 lg:gap-20 items-start">
           {/* Left Content Area */}

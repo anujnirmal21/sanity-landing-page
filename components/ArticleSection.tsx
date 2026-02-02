@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 type ArticleSectionProps = {
   data?: {
@@ -23,32 +23,30 @@ export default function ArticleSection({ data }: ArticleSectionProps) {
 
   return (
     <section className="w-full bg-[#1E0903] flex items-center justify-center py-[120px] px-4 overflow-hidden">
-      <div className="relative w-full max-w-[1120px] min-h-[253px]">
-
+      <div className="relative w-full max-w-6xl min-h-[253px]">
         {/* Gradient Back Card */}
         <div className="absolute top-[11px] left-0 w-[calc(100%-9px)] h-full rounded-[6px] border-[0.75px] border-black z-0">
           <div
             className="w-full h-full rounded-[5px] opacity-90"
             style={{
               background:
-                'linear-gradient(95.72deg, #E7DFD4 0%, #E9BFC9 14%, #FF59AE 26%, #FD368A 33%, #F45669 44%, #EC7551 51%, #49AA3F 67%, #1C997C 78%, #B1DFAB 96%, #E7DFD4 100%)',
+                "linear-gradient(95.72deg, #E7DFD4 0%, #E9BFC9 14%, #FF59AE 26%, #FD368A 33%, #F45669 44%, #EC7551 51%, #49AA3F 67%, #1C997C 78%, #B1DFAB 96%, #E7DFD4 100%)",
             }}
           />
         </div>
 
         {/* White Content Card */}
         <div className="relative left-[4px] md:left-[9px] top-0 w-full bg-white border-[0.75px] border-[#17100E] rounded-[6px] z-10 flex flex-col lg:flex-row items-center p-[24px] lg:px-[24px] lg:py-0 min-h-[253px]">
-
           {/* Left Content */}
           <div className="flex flex-col justify-center gap-[40px] lg:gap-[56px] w-full lg:w-1/2 pt-6 lg:pt-0">
             {headline && (
-              <h2 className="font-helvetica font-light text-[32px] md:text-[48px] leading-[100%] tracking-[-2.13px] text-black max-w-[507px]">
+              <h2 className="font-helvetica font-light text-[32px] md:text-[48px] leading-[100%] tracking-[-2.13px] text-black max-w-lg">
                 {headline}
               </h2>
             )}
 
             {description && (
-              <p className="font-helvetica font-normal text-[16px] md:text-[17.7px] leading-[132%] tracking-[-0.03em] text-black max-w-[507px]">
+              <p className="font-helvetica font-normal text-[16px] md:text-[17.7px] leading-[132%] tracking-[-0.03em] text-black max-w-lg">
                 {description}
               </p>
             )}
@@ -93,7 +91,6 @@ export default function ArticleSection({ data }: ArticleSectionProps) {
               </a>
             )}
           </div>
-
         </div>
       </div>
     </section>

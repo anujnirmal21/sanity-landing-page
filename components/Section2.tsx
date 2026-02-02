@@ -13,17 +13,17 @@ export default function Section2({ data }: Section2Props) {
 
   return (
     <section className="relative w-full bg-white flex flex-col items-center justify-center py-10 md:py-[90px] px-6 lg:px-[112px] overflow-hidden">
-      <div className="flex flex-col items-center gap-[76px] w-full max-w-[1216px] z-10">
+      <div className="flex flex-col items-center gap-[76px] w-full max-w-7xl z-10">
         {/* Header */}
         {(headline || subheadline) && (
-          <div className="flex flex-col items-center gap-[16px] max-w-[724px] text-center">
+          <div className="flex flex-col items-center gap-[16px] max-w-3xl text-center">
             {headline && (
               <h2 className="font-helvetica font-bold text-[40px] md:text-[59.8px] leading-[100%] tracking-[-3.84px] text-[#0F0F0F]">
                 {headline}
               </h2>
             )}
             {subheadline && (
-              <p className="font-helvetica font-normal text-[18px] md:text-[19.9px] leading-[100%] tracking-[-0.5px] text-[#0F0F0F] max-w-[523px]">
+              <p className="font-helvetica font-normal text-[18px] md:text-[19.9px] leading-[100%] tracking-[-0.5px] text-[#0F0F0F] max-w-lg">
                 {subheadline}
               </p>
             )}
@@ -33,7 +33,7 @@ export default function Section2({ data }: Section2Props) {
         {/* Content */}
         <div className="flex flex-col lg:flex-row items-start justify-between w-full gap-12 lg:gap-[212px]">
           {/* Left Column */}
-          <div className="flex flex-col items-start gap-[64px] w-full max-w-[600px]">
+          <div className="flex flex-col items-start gap-[64px] w-full max-w-2xl">
             {/* Paragraphs */}
             {paragraphs && paragraphs?.length > 0 && (
               <div className="flex flex-col items-start gap-[24px] w-full">
@@ -63,7 +63,7 @@ export default function Section2({ data }: Section2Props) {
 
           {/* Right Column – Image */}
           {image?.asset?.url && (
-            <div className="relative w-full max-w-[404px] aspect-[404/818] hidden lg:block">
+            <div className="relative w-full max-w-sm aspect-[404/818] hidden lg:block">
               <div className="relative w-full h-full mix-blend-multiply">
                 <Image
                   src={image.asset.url}

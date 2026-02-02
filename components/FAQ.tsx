@@ -31,11 +31,11 @@ const FAQSection = ({ data }: FAQSectionProps) => {
     <section className="relative w-full bg-[#1E0903] flex flex-col items-center py-16 md:py-24 px-4 sm:px-6 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent mix-blend-overlay pointer-events-none" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-[1440px] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-color-dodge pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-color-dodge pointer-events-none" />
 
-      <div className="relative z-10 w-full max-w-[1204px] flex flex-col items-center gap-12 md:gap-[48px]">
+      <div className="relative z-10 w-full max-w-7xl flex flex-col items-center gap-12 md:gap-[48px]">
         {/* --- Header Section --- */}
-        <div className="flex flex-col items-center text-center gap-6 md:gap-[32px] max-w-[800px]">
+        <div className="flex flex-col items-center text-center gap-6 md:gap-[32px] max-w-3xl">
           {eyebrow && (
             <div className="flex items-center justify-center px-3 py-1 rounded-full border border-transparent">
               <span className="font-sans font-medium text-sm md:text-[25px] leading-[132%] tracking-wide md:tracking-[-1px] uppercase text-[#E87722]">
@@ -52,7 +52,7 @@ const FAQSection = ({ data }: FAQSectionProps) => {
             )}
 
             {subheading && (
-              <p className="font-sans font-medium text-base md:text-[18px] leading-[160%] tracking-[-0.02em] text-[#D1D1D1] opacity-80 text-center max-w-[660px]">
+              <p className="font-sans font-medium text-base md:text-[18px] leading-[160%] tracking-[-0.02em] text-[#D1D1D1] opacity-80 text-center max-w-2xl">
                 {subheading}
               </p>
             )}
@@ -60,7 +60,7 @@ const FAQSection = ({ data }: FAQSectionProps) => {
         </div>
 
         {/* --- FAQ List --- */}
-        <div className="w-full max-w-[788px] flex flex-col gap-4">
+        <div className="w-full max-w-3xl flex flex-col gap-4">
           {items.map((item, index) => {
             const isOpen = openId === item._key;
             const number = (index + 1).toString().padStart(2, "0");

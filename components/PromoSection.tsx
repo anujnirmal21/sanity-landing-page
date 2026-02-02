@@ -57,7 +57,6 @@ export default function PromoSection({ data = defaultData }: PromoProps) {
 
   return (
     <section className="relative w-full min-h-[500px] lg:h-[792px] overflow-hidden flex items-center justify-center bg-black">
-      
       {/* Background Image with Slow Zoom Effect */}
       <div className="absolute inset-0 z-0">
         <motion.div
@@ -89,7 +88,7 @@ export default function PromoSection({ data = defaultData }: PromoProps) {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="relative z-10 flex flex-col items-center gap-8 md:gap-10 px-6 text-center w-full max-w-[1076px]"
+        className="relative z-10 flex flex-col items-center gap-8 md:gap-10 px-6 text-center w-full max-w-5xl"
       >
         {/* Headline */}
         <motion.h2

@@ -53,7 +53,7 @@ export default function TestimonialsSection({
     <section className="w-full flex justify-center py-12 md:py-20 bg-[#FEF7EE] rounded-[24px] overflow-hidden">
       <div className="w-full px-4 md:px-8 flex flex-col gap-10 md:gap-[80px]">
         {/* Header */}
-        <div className="flex flex-col gap-2 w-full max-w-[1293px] mx-auto">
+        <div className="flex flex-col gap-2 w-full max-w-7xl mx-auto">
           <motion.h2
             initial="hidden"
             whileInView="visible"
@@ -165,7 +165,7 @@ const PersonaCard = ({ image, name }: { image: string; name: string }) => {
     <motion.div
       variants={cardVariants}
       whileHover="hover"
-      className="relative w-full md:flex-1 xl:w-[313px] h-[290px] border border-[#0F0F0F] rounded-[1px] bg-[#E7E7E7] overflow-hidden flex-shrink-0"
+      className="relative w-full md:flex-1 xl:w-80 h-[290px] border border-[#0F0F0F] rounded-[1px] bg-[#E7E7E7] overflow-hidden flex-shrink-0"
     >
       <motion.div variants={hoverEffect} className="w-full h-full relative">
         <Image src={image} alt={name} fill className="object-cover" />
@@ -186,7 +186,7 @@ const LogoCard = ({
     <motion.div
       variants={cardVariants}
       whileHover="hover"
-      className="w-full md:flex-1 xl:w-[266px] h-[290px] flex-shrink-0"
+      className="w-full md:flex-1 xl:w-64 h-[290px] flex-shrink-0"
     >
       <motion.div
         variants={hoverEffect}
@@ -213,7 +213,7 @@ const ReviewCard = ({
     <motion.div
       variants={cardVariants}
       whileHover="hover"
-      className="w-full xl:flex-1 xl:max-w-[615px] min-h-[290px] flex-shrink-0"
+      className="w-full xl:flex-1 xl:max-w-2xl min-h-[290px] flex-shrink-0"
     >
       <motion.div
         variants={hoverEffect}

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
 // =====================
 // Interfaces
@@ -21,7 +21,6 @@ interface SanityImage {
   src?: string;
   alt?: string;
 }
-
 
 interface FooterData {
   logo?: SanityImage;
@@ -50,39 +49,28 @@ interface ColumnProps {
   links: LinkItem[];
 }
 
-
 const Footer = ({ data }: { data?: FooterData }) => {
   if (!data) return null;
 
-  const {
-    logo,
-    columns,
-    newsletter,
-    copyright,
-    legalLinks,
-    socials,
-    credit,
-  } = data;
+  const { logo, columns, newsletter, copyright, legalLinks, socials, credit } =
+    data;
 
   const logoUrl = logo?.src;
 
-  console.log("logo: ",logoUrl)
+  console.log("logo: ", logoUrl);
 
   return (
     <div className="w-full bg-[#F4F3EC] flex flex-col items-center py-7 px-6 pb-10 gap-6 font-sans text-[#838383]">
-      
       {/* ================= Main Footer ================= */}
-      <div className="w-full max-w-[1392px] bg-[#0F1415] border border-[#BBBBBB]/70 rounded-2xl flex flex-col lg:flex-row items-start px-10 py-20 gap-20">
-        
+      <div className="w-full max-w-7xl bg-[#0F1415] border border-[#BBBBBB]/70 rounded-2xl flex flex-col lg:flex-row items-start px-10 py-20 gap-20">
         {/* Columns */}
         <div className="flex flex-col md:flex-row items-start gap-20 flex-grow">
-          
           {/* Logo */}
           {logoUrl && (
             <div className="relative w-[107px] h-[40px]">
               <Image
                 src={logoUrl}
-                alt={logo.alt||"footer logo"}
+                alt={logo.alt || "footer logo"}
                 fill
                 className="object-contain"
                 priority
@@ -101,7 +89,7 @@ const Footer = ({ data }: { data?: FooterData }) => {
 
         {/* ================= Newsletter ================= */}
         {newsletter && (
-          <div className="flex flex-col items-start gap-6 w-full max-w-[380px]">
+          <div className="flex flex-col items-start gap-6 w-full max-w-md">
             <div className="flex flex-col gap-4">
               {newsletter.heading && (
                 <h3 className="font-semibold text-base tracking-tight text-[#F9FBFB]">
@@ -138,8 +126,7 @@ const Footer = ({ data }: { data?: FooterData }) => {
       </div>
 
       {/* ================= Bottom Bar ================= */}
-      <div className="w-full max-w-[1392px] flex flex-col md:flex-row justify-between items-center px-3 gap-6 md:gap-16">
-        
+      <div className="w-full max-w-7xl flex flex-col md:flex-row justify-between items-center px-3 gap-6 md:gap-16">
         <div className="flex flex-col md:flex-row items-center gap-6">
           {copyright && (
             <span className="text-sm underline mix-blend-difference">
@@ -178,8 +165,7 @@ const Footer = ({ data }: { data?: FooterData }) => {
 
       {/* ================= Credit ================= */}
       {credit && (
-        <div className="w-full max-w-[1392px] bg-[#0F0F0F] border border-[#BBBBBB] rounded-xl p-10 flex flex-col md:flex-row justify-between items-center gap-10">
-          
+        <div className="w-full max-w-7xl bg-[#0F0F0F] border border-[#BBBBBB] rounded-xl p-10 flex flex-col md:flex-row justify-between items-center gap-10">
           {credit.text && (
             <span className="text-sm underline text-[#838383]">
               {credit.text}

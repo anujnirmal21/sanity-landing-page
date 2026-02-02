@@ -42,10 +42,10 @@ export default function HeroContent({ data }: any) {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="relative flex flex-col items-start w-full max-w-[1200px] px-5 md:px-0"
+      className="relative flex flex-col items-start w-full px-5 md:px-0"
     >
       {/* --- Headlines Section --- */}
-      <div className="relative w-full max-w-[966px] mb-8 lg:mb-[32.5px]">
+      <div className="relative w-full max-w-5xl mb-8 lg:mb-[32.5px]">
         <div className="overflow-hidden">
           <motion.h1
             variants={textRevealVariants}
@@ -71,9 +71,9 @@ export default function HeroContent({ data }: any) {
       {/* --- Description Section --- */}
       <motion.div
         variants={fadeUpVariants}
-        className="w-full max-w-[827px] border-t-[2px] border-white pt-6 lg:pt-[38.5px] pb-8 lg:pb-[40px]"
+        className="w-full max-w-4xl border-t-[2px] border-white pt-6 lg:pt-[38.5px] pb-8 lg:pb-[40px]"
       >
-        <p className="font-inter font-light text-lg sm:text-2xl lg:text-[25.7px] leading-snug lg:leading-[31px] tracking-tight lg:tracking-[-1.04px] text-white max-w-full lg:max-w-[766px]">
+        <p className="font-inter font-light text-lg sm:text-2xl lg:text-[25.7px] leading-snug lg:leading-[31px] tracking-tight lg:tracking-[-1.04px] text-white max-w-full lg:max-w-3xl">
           {data.description ||
             "Harness the precision and agility of Tiger Analytics to unlock transformative insights that drive innovation, optimize decision-making, and accelerate your business growth. With our AI-powered solutions, you can stay ahead of the competition and make data-driven decisions with confidence."}
         </p>
