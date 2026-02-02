@@ -21,16 +21,14 @@ interface FAQSectionProps {
 const FAQSection = ({ data }: FAQSectionProps) => {
   const { eyebrow, heading, subheading, items = [] } = data;
 
-  const [openId, setOpenId] = useState<string | null>(
-    items?.[0]?._key ?? null
-  );
+  const [openId, setOpenId] = useState<string | null>(items?.[0]?._key ?? null);
 
   const toggleFAQ = (id: string) => {
     setOpenId(openId === id ? null : id);
   };
 
   return (
-    <section className="relative w-full min-h-screen bg-[#1E0903] flex flex-col items-center py-16 md:py-24 px-4 sm:px-6 overflow-hidden">
+    <section className="relative w-full bg-[#1E0903] flex flex-col items-center py-16 md:py-24 px-4 sm:px-6 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent mix-blend-overlay pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-[1440px] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-color-dodge pointer-events-none" />

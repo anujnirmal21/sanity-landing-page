@@ -50,8 +50,8 @@ export default function TestimonialsSection({
   const { header, testimonials } = data;
 
   return (
-    <section className="w-full flex justify-center md:mx-12 py-12 md:py-20 bg-[#FEF7EE] rounded-[24px] overflow-hidden">
-      <div className="w-full max-w-[1392px] px-4 md:px-8 flex flex-col gap-10 md:gap-[80px]">
+    <section className="w-full flex justify-center py-12 md:py-20 bg-[#FEF7EE] rounded-[24px] overflow-hidden">
+      <div className="w-full px-4 md:px-8 flex flex-col gap-10 md:gap-[80px]">
         {/* Header */}
         <div className="flex flex-col gap-2 w-full max-w-[1293px] mx-auto">
           <motion.h2
@@ -219,7 +219,7 @@ const ReviewCard = ({
         variants={hoverEffect}
         className={clsx(
           "w-full h-full border border-[#0F0F0F] rounded-[1px] p-6 md:p-[22px] flex flex-col justify-between",
-          bgColor
+          bgColor,
         )}
       >
         <p className="font-sans font-light text-[20px] md:text-[24px] leading-[1.3] tracking-[-1.04px] text-[#0F0F0F] line-clamp-6 md:line-clamp-4 mb-4">

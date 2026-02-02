@@ -21,7 +21,7 @@ export default async function LandingPage() {
   if (!data) return null;
 
   return (
-    <main>
+    <main className=" max-w-[1440px] mx-auto">
       {data.hero && (
         <div className="relative">
           <Image

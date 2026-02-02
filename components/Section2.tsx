@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import { Section2CMS } from "@/types";
 
-
 type Section2Props = {
   data?: Section2CMS;
 };
@@ -10,18 +9,11 @@ type Section2Props = {
 export default function Section2({ data }: Section2Props) {
   if (!data) return null;
 
-  const {
-    headline,
-    subheadline,
-    paragraphs,
-    cta,
-    image,
-  } = data;
+  const { headline, subheadline, paragraphs, cta, image } = data;
 
   return (
     <section className="relative w-full bg-white flex flex-col items-center justify-center py-10 md:py-[90px] px-6 lg:px-[112px] overflow-hidden">
       <div className="flex flex-col items-center gap-[76px] w-full max-w-[1216px] z-10">
-
         {/* Header */}
         {(headline || subheadline) && (
           <div className="flex flex-col items-center gap-[16px] max-w-[724px] text-center">
@@ -40,10 +32,8 @@ export default function Section2({ data }: Section2Props) {
 
         {/* Content */}
         <div className="flex flex-col lg:flex-row items-start justify-between w-full gap-12 lg:gap-[212px]">
-
           {/* Left Column */}
           <div className="flex flex-col items-start gap-[64px] w-full max-w-[600px]">
-
             {/* Paragraphs */}
             {paragraphs && paragraphs?.length > 0 && (
               <div className="flex flex-col items-start gap-[24px] w-full">

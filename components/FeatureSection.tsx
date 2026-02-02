@@ -184,7 +184,7 @@ const FeatureSection = ({ data }: FeatureSectionProps) => {
           <>
             <div className="relative">
               <Header />
-              <div className="hidden lg:block absolute right-0 top-2">
+              <div className="hidden lg:block absolute right-0 top-2 z-20">
                 <CTAButton label={cta.label} href={cta.href} />
               </div>
             </div>
@@ -218,17 +218,17 @@ const FeatureSection = ({ data }: FeatureSectionProps) => {
 };
 
 const CTAButton = ({ label, href }: { label: string; href: string }) => (
-  <motion.a
-    href={href}
+  <motion.button
     whileHover={{ scale: 1.03 }}
+    onClick={() => window.open(href, "_blank")}
     whileTap={{ scale: 0.97 }}
     transition={{ duration: 0.25, ease: EASE }}
-    className="inline-flex items-center justify-center w-[140px] h-[52px] border-2 border-[#0F0F0F] rounded-[6px] bg-white text-[#0F0F0F] hover:bg-[#0F0F0F] hover:text-white transition-colors duration-300 box-border"
+    className="inline-flex items-center justify-center w-[140px] h-[52px] border-2 border-[#0F0F0F] rounded-[6px] bg-white text-[#0F0F0F] hover:bg-[#0F0F0F] hover:text-white transition-colors duration-300 box-border cursor-pointer"
   >
     <span className="font-bold text-[17.13px] leading-[20px] tracking-[-0.5px] text-center">
       {label}
     </span>
-  </motion.a>
+  </motion.button>
 );
 
 export default FeatureSection;

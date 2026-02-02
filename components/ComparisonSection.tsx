@@ -88,15 +88,14 @@ export default function CompetitionLeaderboard({
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
         variants={containerVariants}
-        className="relative w-full max-w-[1200px] rounded-[32px] overflow-hidden bg-white shadow-2xl border border-gray-100 p-8 md:p-12 lg:p-16"
+        className="relative w-full mx-auto max-w-[1200px] rounded-[32px] overflow-hidden bg-white shadow-2xl border border-gray-100 p-8 md:p-12 lg:p-16"
       >
         <div className="flex flex-col gap-12 lg:gap-20 items-start">
-          
           {/* Left Content Area */}
           <div className="flex-1 flex flex-col gap-8 w-full">
             <div className="flex flex-col gap-6">
               {heading && (
-                <motion.h2 
+                <motion.h2
                   variants={itemVariants}
                   className="text-4xl md:text-5xl lg:text-[56px] leading-[1.1] tracking-tight text-black font-bold"
                 >
@@ -105,7 +104,7 @@ export default function CompetitionLeaderboard({
               )}
 
               {description && (
-                <motion.p 
+                <motion.p
                   variants={itemVariants}
                   className="text-lg md:text-[19px] leading-relaxed text-gray-700 max-w-xl font-medium"
                 >
@@ -124,7 +123,7 @@ export default function CompetitionLeaderboard({
           {/* Right Stats Area */}
           <div className="flex-1 w-full max-w-2xl pt-2">
             {statsTitle && (
-              <motion.div 
+              <motion.div
                 variants={itemVariants}
                 className="border-b-2 border-black pb-4 mb-8"
               >
@@ -148,7 +147,7 @@ export default function CompetitionLeaderboard({
                   {/* Animated Bar Container */}
                   <div className="relative h-10 md:h-12 w-full flex items-start bg-gray-50 rounded-r-full overflow-hidden">
                     {item.barImage && (
-                      <motion.div 
+                      <motion.div
                         variants={barVariants}
                         className="relative h-full w-full"
                       >
@@ -177,22 +176,32 @@ export default function CompetitionLeaderboard({
 
 // --- Custom 3D Layered Button Component ---
 
-const CustomStackedButton = ({ text, href }: { text: string; href: string }) => {
+const CustomStackedButton = ({
+  text,
+  href,
+}: {
+  text: string;
+  href: string;
+}) => {
   return (
-    <Link href={href || "#"} className="group relative inline-block w-[220px] h-[60px] cursor-pointer">
+    <Link
+      href={href || "#"}
+      className="group relative inline-block w-[220px] h-[60px] cursor-pointer"
+    >
       {/* Layer 1: Bottom Shadow (Orange) */}
-      <div 
+      <div
         className="absolute w-full h-[52px] bg-[#E87722] rounded-[6px]"
-        style={{ top: '6px', left: '6px' }}
+        style={{ top: "6px", left: "6px" }}
       />
 
       {/* Layer 2: Middle Gradient (Rainbow) */}
-      <div 
+      <div
         className="absolute w-full h-[52px] rounded-[6px]"
-        style={{ 
-          top: '3px', 
-          left: '3px',
-          background: 'linear-gradient(96.1deg, #FE318D 5%, #FF3973 18%, #EF7976 31%, #FD9454 47%, #D5877E 67%, #9BD91A 83%, #09F200 100%, #3ED20D 100%)'
+        style={{
+          top: "3px",
+          left: "3px",
+          background:
+            "linear-gradient(96.1deg, #FE318D 5%, #FF3973 18%, #EF7976 31%, #FD9454 47%, #D5877E 67%, #9BD91A 83%, #09F200 100%, #3ED20D 100%)",
         }}
       />
 
@@ -202,7 +211,7 @@ const CustomStackedButton = ({ text, href }: { text: string; href: string }) => 
         whileTap={{ x: 4, y: 4 }}
         transition={{ type: "spring", stiffness: 400, damping: 20 }}
         className="absolute w-full h-[52px] bg-[#1E0903] rounded-[6px] flex items-center justify-center z-10"
-        style={{ top: '0px', left: '0px' }}
+        style={{ top: "0px", left: "0px" }}
       >
         <span className="font-sans font-bold text-[19px] leading-[20px] tracking-[-0.5px] text-white">
           {text}
