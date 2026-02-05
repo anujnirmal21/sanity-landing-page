@@ -9,8 +9,8 @@ export default {
       title: "Hero Section",
       type: "object",
       fields: [
-        { name: "eyebrow", title: "Eyebrow", type: "string" },
-        { name: "title", title: "Title", type: "string" },
+        { name: "title1", title: "Title Line 1", type: "string" },
+        { name: "title2", title: "Title Line 2", type: "string" },
         { name: "description", title: "Description", type: "text" },
         {
           name: "ctas",

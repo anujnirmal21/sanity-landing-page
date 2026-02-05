@@ -63,11 +63,10 @@ export const footerQuery = `
 }
 `;
 
-
 export const heroQuery = `
 hero{
-  eyebrow,
-  title,
+  title1,
+  title2,
   description,
   ctas[]{
     label,
@@ -227,7 +226,7 @@ export const faqSectionQuery = `
       answer
     }
   }
-`
+`;
 
 export const promoSectionQuery = `
   promoSection {
@@ -243,7 +242,7 @@ export const promoSectionQuery = `
       }
     }
   }
-`
+`;
 
 export const articleSectionQuery = `
   articleSection {
@@ -259,7 +258,7 @@ export const articleSectionQuery = `
       href
     }
   }
-`
+`;
 export const marketingSectionQuery = `
 marketingSection {
   title,
@@ -278,7 +277,6 @@ marketingSection {
   }
 }
 `;
-
 
 export const landingPageQuery = `
 *[_type == "landingPage"][0]{

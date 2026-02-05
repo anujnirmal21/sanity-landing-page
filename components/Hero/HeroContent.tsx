@@ -7,8 +7,8 @@ const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15, // Delay between each element
-      delayChildren: 0.2, // Initial delay
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
     },
   },
 };
@@ -19,7 +19,7 @@ const textRevealVariants: Variants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.215, 0.61, 0.355, 1], // Cubic Bezier for smooth "premium" feel
+      ease: [0.215, 0.61, 0.355, 1],
     },
   },
 };
@@ -51,7 +51,7 @@ export default function HeroContent({ data }: any) {
             variants={textRevealVariants}
             className="font-helvetica font-medium text-4xl sm:text-6xl lg:text-[90px] leading-tight lg:leading-[94px] tracking-tight lg:tracking-[-5.9px] text-white block"
           >
-            {data.titleLine1 || "Lead the Pack with Tiger-Driven Insights"}
+            {data.title1}
           </motion.h1>
         </div>
 
@@ -62,7 +62,7 @@ export default function HeroContent({ data }: any) {
               variants={textRevealVariants}
               className="font-helvetica font-medium text-4xl sm:text-6xl lg:text-[90px] leading-tight lg:leading-[104px] tracking-tight lg:tracking-[-6.9px] text-white block"
             >
-              {data.titleLine2 || "outpacing Rivals"}
+              {data.title2}
             </motion.span>
           </div>
         </div>
@@ -74,8 +74,7 @@ export default function HeroContent({ data }: any) {
         className="w-full max-w-4xl border-t-[2px] border-white pt-6 lg:pt-[38.5px] pb-8 lg:pb-[40px]"
       >
         <p className="font-inter font-light text-lg sm:text-2xl lg:text-[25.7px] leading-snug lg:leading-[31px] tracking-tight lg:tracking-[-1.04px] text-white max-w-full lg:max-w-3xl">
-          {data.description ||
-            "Harness the precision and agility of Tiger Analytics to unlock transformative insights that drive innovation, optimize decision-making, and accelerate your business growth. With our AI-powered solutions, you can stay ahead of the competition and make data-driven decisions with confidence."}
+          {data.description}
         </p>
       </motion.div>
 
